@@ -8,9 +8,9 @@ class Passwolt(object):
         self.factory = factory
         self.master_password = master_password
 
-    def store(self, url, id, password, tags=None):
+    def store(self, url, username, password, tags=None):
         """
-        Store a new password corresponding to ``id`` for the website
+        Store a new password corresponding to ``username`` for the website
         ``url``.
 
         The tags helps to easily retrieve and organize passwords across
@@ -18,15 +18,15 @@ class Passwolt(object):
         """
         pass
 
-    def fetch(self, url, id):
+    def fetch(self, url, username):
         """
-        Fetch password corresponding to ``id`` for the website ``url``.
+        Fetch password corresponding to ``username`` for the website ``url``.
         """
         pass
 
-    def update(self, url, id, password):
+    def update(self, url, username, password):
         """
-        Update existing password corresponding to ``id`` for the website
+        Update existing password corresponding to ``username`` for the website
         ``url``.
         """
         pass
@@ -41,13 +41,19 @@ class Passwolt(object):
         """
         Search ``text`` in the fields specified by ``fields``.
 
-        By default (``fields=Ellipsis``), all the fields (i.e. ``url``, ``id``
-        and ``tags``) are searched.
+        By default (``fields=Ellipsis``), all the fields (i.e. ``url``,
+        ``username`` and ``tags``) are searched.
         """
         pass
 
     def generate_password(self, length=10):
         """
         Generate a strong password with desired ``length``.
+        """
+        pass
+
+    def add_tag(self, url, tags):
+        """
+        Add new tags corresponding to the website ``url``.
         """
         pass
